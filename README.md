@@ -31,5 +31,5 @@ $ npm install
 $ npm start
 ```
 
-Your frontend app should now be running on [localhost:4200](http://localhost:4200/).
+Your frontend app should now be running on [localhost:4200](http://localhost:4200/).<br />
 Your backend app should now be running on [localhost:3000](http://localhost:3000/).
