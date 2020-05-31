@@ -1,0 +1,28 @@
+:host {
+  .mat-toolbar-row {
+    justify-content: space-around;
+  }
+  .nav-menu-list {
+    height: 100%;
+    align-items: center;
+    display: flex;
+    .nav-menu-link {
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &.active {
+        background: #a6a4a4;
+        border-radius: 0px;
+        color: white;
+        border-top: 2px solid #eaeaea;
+        font-weight: 500;
+      }
+      &:hover{
+        color: #fff;
+      }
+    }
+  }
+}

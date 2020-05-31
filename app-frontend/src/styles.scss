@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/theming";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+$custom-typography: mat-typography-config(
+  $font-family: '"Montserrat", sans-serif;',
+);
+$notifyDangerColor: #e53030;
+$notifySuccessColor: #2dac2d;
+$disabledBtnColor: rgb(144, 154, 204);
+$tblHeaderBorderColor: #b2acac;
+$tblHeaderFontColor: #615b5b;
+
+@include mat-core($custom-typography);
+
+.mat-raised-button {
+  min-width: 120px;
+  min-height: 45px;
+  &:disabled {
+    background-color: $disabledBtnColor !important;
+    color: white !important;
+    cursor: not-allowed;
+  }
+}
+
+.notify-panel {
+  color: white;
+  font-weight: 500;
+  min-height: 70px !important;
+  &.notify-danger {
+    background-color: $notifyDangerColor;
+  }
+  &.notify-success {
+    background-color: $notifySuccessColor;
+  }
+  .mat-simple-snackbar {
+    height: 100%;
+  }
+}
+
+table {
+  width: 100%;
+  &.mat-table {
+    .mat-header-row {
+      .mat-header-cell {
+        font-size: 15px;
+        font-weight: 600;
+        color: $tblHeaderFontColor;
+        border-bottom-width: 1.2px;
+        border-color: $tblHeaderBorderColor;
+      }
+    }
+  }
+}
+
+.mat-paginator {
+  font-size: 13px;
+}

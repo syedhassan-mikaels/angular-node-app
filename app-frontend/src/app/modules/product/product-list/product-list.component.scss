@@ -1,0 +1,61 @@
+:host {
+  .mat-card {
+    min-height: initial;
+  }
+  .filter-wrapper {
+    margin-bottom: 15px;
+  }
+  .input-date-wrapper {
+    .mat-datepicker-input {
+      width: 85%;
+    }
+    mat-icon.input-rm {
+      color: #eb2010cc;
+      position: relative;
+      float: right;
+      top: 0px;
+      cursor: pointer;
+      height: 15px;
+      width: 25px;
+      font-size: 17px;
+    }
+  }
+  ::ng-deep {
+    .mat-form-field-appearance-legacy {
+      .mat-form-field-label {
+        color: #7a6c6c;
+      }
+    }
+    .mat-form-field-disabled .mat-form-field-underline {
+      background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 1) 0,
+        rgba(0, 0, 0, 0.42) 33%,
+        #c2c7cc 0
+      ) !important;
+      background-size: 1px 100% !important;
+      background-repeat: repeat-x !important;
+    }
+    .input-date-wrapper {
+      .mat-input-element:disabled {
+        color: #7a6c6c;
+      }
+      .mat-form-field-wrapper {
+        .mat-form-field-flex {
+          .mat-form-field-infix {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+  .hide{
+    display: none;
+  }
+  mat-footer-row{
+    td{
+      width: 100%;
+      border: 0px;
+    }
+  }
+}

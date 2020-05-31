@@ -1,0 +1,42 @@
+<mat-card class="example-card">
+
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Add Product</h1>
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-divider></mat-divider>
+
+  <mat-card-content>
+
+    <div [formGroup]="productForm">
+      <div fxLayout="row wrap" fxLayoutGap="20px" fxLayout.xs="column" fxFlexFill>
+        <div fxFlex="30">
+          <mat-form-field appearance="outline" class="form-control" >
+            <mat-label>Product Name</mat-label>
+            <input matInput placeholder="Enter Name" formControlName="name">
+          </mat-form-field>
+        </div>
+        <div fxFlex="30">
+          <mat-form-field appearance="outline" class="form-control">
+            <mat-label>Price</mat-label>
+            <input matInput placeholder="Enter Price" formControlName="price" type="number">
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="row wrap">
+        <div fxFlex="30">
+          <button
+            mat-raised-button color="primary"
+            [disabled]="productForm?.invalid"
+            (click)="onSave()"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+
+</mat-card>

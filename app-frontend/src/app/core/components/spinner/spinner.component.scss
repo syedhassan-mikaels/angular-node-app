@@ -1,0 +1,19 @@
+:host{
+  mat-progress-spinner{
+    position: fixed;
+    z-index: 10;
+    left: calc( 50% - 100px );
+    top: calc( 50% - 100px );
+  }
+  .transparent-wrapper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    top: 0px;
+    left: 0px;
+    background: rgba(239, 239, 239, 1);
+    z-index: 9;
+
+  }
+}

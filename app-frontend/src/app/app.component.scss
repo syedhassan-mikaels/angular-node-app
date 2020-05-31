@@ -1,0 +1,27 @@
+:host {
+  .main-container {
+    min-height: 88vh;
+    margin-top: 20px;
+  }
+  ::ng-deep {
+    mat-card {
+      .mat-card-header-text {
+        margin-left: 0px;
+        h1 {
+          font-weight: 500;
+          color: #615b5b;
+        }
+      }
+    }
+    mat-card-content {
+      margin-top: 20px;
+      .form-control {
+        width: 100%;
+      }
+
+      .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+        color: rgba(192, 191, 202, 0.87);
+      }
+    }
+  }
+}
