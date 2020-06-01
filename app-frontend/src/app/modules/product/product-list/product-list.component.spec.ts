@@ -21,7 +21,8 @@ describe('ProductListComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Fetch All Products', () => {
     expect(component).toBeTruthy();
+    component.fetchAllProducts();
   });
 });
