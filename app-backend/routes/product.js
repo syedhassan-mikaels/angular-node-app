@@ -11,7 +11,7 @@ const router = express.Router();
 // GET /product/list
 router.get('/list', productController.getProducts);
 
-// POST /feed/post
+// POST /product/save
 router.post(
   '/save',
   productValidationRules(),
