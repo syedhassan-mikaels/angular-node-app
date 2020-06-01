@@ -13,7 +13,7 @@ This application demonstrates the management of product store.
 
 - Frontend Technology: Angular-9, Material Design, HTML, SCSS
 - Backend Technology: Nodejs, Express
-- Database : MySql
+- ORM Database : Sequelize
 
 ## Running Locally
 
@@ -21,8 +21,6 @@ Make sure you have [Node.js](http://nodejs.org/) installed.
 
 ```sh
 $ git clone https://github.com/syedhassan-mikaels/angular-node-app.git
-$ Restore database file in your MySql client which placed on main directory "db.sql"
-$ Configure your database settings- open **app-backend/config/db.js** and do necessary changes
 $ cd app-frontend
 $ npm install
 $ npm start
@@ -30,6 +28,10 @@ $ cd app-backend
 $ npm install
 $ npm start
 ```
+
+#### Create .env File
+You will find a example.env file in the home directory. Paste the contents of that into a file named .env in the same directory. 
+Configure the variables to fit your application
 
 Your frontend app should now be running on [localhost:4200](http://localhost:4200/).<br />
 Your backend app should now be running on [localhost:3000](http://localhost:3000/).
