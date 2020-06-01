@@ -1,4 +1,4 @@
 module.exports = {
     appTitle: 'Product API',
-    pageSize : 3
+    pageSize : 10
 };
