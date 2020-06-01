@@ -27,8 +27,8 @@ $ npm install
 $ npm start
 $ cd app-backend
 $ npm install
-$ Create .env file in main directory of app-backend folder
-$ Copy the contents of file example.env into the .env file then configure the variables to fit your application
+$ Rename example.env to .env file on main directory of app-backend folder
+$ Configure the .env variables to fit your application
 $ npm start
 ```
 
