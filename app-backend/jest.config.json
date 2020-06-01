@@ -1,0 +1,7 @@
+{
+    "testRegex": "(/tests/.*|\\.(tests))\\.(js)$",
+    "coveragePathIgnorePatterns": [
+        "/node_modules/"
+    ],
+    "testEnvironment": "node"
+}

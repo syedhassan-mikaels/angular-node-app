@@ -22,3 +22,5 @@ app.use((req, res, next) => {
 app.use('/product', productRoutes);
 
 app.listen(3000);
+
+module.exports = app;
