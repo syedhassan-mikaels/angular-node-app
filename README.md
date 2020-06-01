@@ -19,6 +19,7 @@ This application demonstrates the management of product store.
 
 Make sure you have [Node.js](http://nodejs.org/) installed.
 
+
 ```sh
 $ git clone https://github.com/syedhassan-mikaels/angular-node-app.git
 $ cd app-frontend
@@ -26,12 +27,11 @@ $ npm install
 $ npm start
 $ cd app-backend
 $ npm install
+$ Create ** .env ** file in main directory of app-backend folder
+$ Copy the contents of file ** example.env **  into the ** .env **  file then configure the variables to fit your application
 $ npm start
 ```
 
-#### Create .env File
-You will find a example.env file in the home directory. Paste the contents of that into a file named .env in the same directory. 
-Configure the variables to fit your application
 
 Your frontend app should now be running on [localhost:4200](http://localhost:4200/).<br />
 Your backend app should now be running on [localhost:3000](http://localhost:3000/).
