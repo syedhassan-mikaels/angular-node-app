@@ -1,4 +1,5 @@
 const { body, validationResult } = require('express-validator');
+const { validateError } = require('../services/util.service');
 
 const productValidationRules = () => {
   return [
@@ -23,11 +24,7 @@ const productValidate = (req, res, next) => {
 
   errorList.forEach((err) => extractedErrors.push({ [err.param]: err.msg }));
 
-  return res.status(422).json({
-    errors: extractedErrors,
-    status: false,
-    message: firstErrorMsg,
-  });
+  return validateError(res, extractedErrors, firstErrorMsg);
 };
 
 module.exports = {

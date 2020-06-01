@@ -1,39 +1,60 @@
-const Product = require('../models/product');
+const moment = require('moment');
+const { Product } = require('../models');
+const { responseError, responseSuccess } = require('../services/util.service');
+const APP_CONFIG = require('../config/app');
+const Sequelize = require('sequelize');
 
 // Retrieve all Products
 exports.getProducts = (req, res) => {
-  const offset = req.query.offset;
+  const offset = +req.query.offset || 1;
   const startDate = req.query.start_date;
   const endDate = req.query.end_date;
+  const pageSize = APP_CONFIG.pageSize;
+  const where = {};
 
-  Product.getAll({ offset, startDate, endDate }, (err, data) => {
-    if (err)
-      res.status(500).send({
-        message: err.message,
-        status: false,
+  if (startDate) where.created_at = { [Sequelize.Op.gte]: startDate };
+  if (endDate)
+    where.created_at = { ...where.created_at, [Sequelize.Op.lte]: endDate };
+
+  Product.findAll({
+    where: where,
+    offset: (offset - 1) * pageSize,
+    limit: pageSize,
+    order: [
+      ['created_at', 'DESC'],
+      ['id', 'DESC'],
+    ],
+  })
+    .then(async (products) => {
+      const records = products;
+      // Get product count
+      const totalRecords = await Product.count({ where: where });
+      const pageCount =
+        Math.floor(totalRecords / pageSize) +
+        (totalRecords % pageSize > 0 ? 1 : 0);
+      return responseSuccess(res, {
+        records,
+        totalRecords,
+        pageCount,
+        pageSize,
       });
-      
-    //res.send({ data, status: true });
-    setTimeout(()=>res.send({ data, status: true }),1000);
-
-  });
+    })
+    .catch((err) => responseError(res, err));
 };
 
 // Create and Save a new Product
 exports.saveProduct = (req, res) => {
-  // Create a Product
   const product = new Product({
     name: req.body.name,
     price: req.body.price,
   });
-
-  // Save Product in the db
-  Product.create(product, (err, data) => {
-    if (err)
-      res.status(500).send({
-        message: err.message,
-        status: false,
-      });
-    else res.send({ data, status: true, message: 'Product has been saved successfully' });
-  });
+  Product.create({
+    name: req.body.name,
+    price: req.body.price,
+    created_at: moment().format('yy-MM-DD')
+  })
+    .then((product) =>
+      responseSuccess(res, product, 'Product has been saved successfully')
+    )
+    .catch((err) => responseError(res, err));
 };
